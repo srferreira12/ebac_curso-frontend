@@ -1,62 +1,66 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
-}
 
-body { background-color: aquamarine;
+body {
+    background-color: rgb(183, 208, 228);
+    font-family: "Roboto", sans-serif;
 }
-
 .container {
-    margin: 80px auto;
-    max-width: 640px;
-    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
 }
-
+h1 {
+    text-align: center;
+    color: #457ba0;
+}
 form {
-    margin-top: 40px;
+    margin-bottom: 20px;
 }
-
-input, textarea, button {
+label {
     display: block;
-    padding: 8px;
-    margin-bottom: 8px;
-    width: 100%;
-    resize: none;
+    margin-bottom: 5px;
+    color: #457ba0;
 }
-
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
 button {
-    background-color: rgb(38, 199, 124);
-    border: none;
-    text-transform: uppercase;
+    margin-top: 5px;
+    width: 100%;
+    padding: 8px;
+    background-color: #4055af;
     color: #fff;
-    font-weight: bold;
-    font-size: 18px;
+    border: none;
+    border-radius: 30px;
     cursor: pointer;
 }
-
 button:hover {
-    background-color:  rgba(37, 95, 63, 0.625);
+    background-color: #4c5eaf;
 }
-.success-message {
-    background-color: rgb(38, 158, 58);
-    padding: 16px;
-    color: #fff;
-    display: none;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    color: #457ba0;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f2f2f2;
 }
 
-.error-message {
-    font-size: 12px;
-    padding: 8px;
-    background-color: rgb(179, 57, 57);
-    color: #fff;
-    margin-bottom: 8px;
-    display: none;
-}
-
-input.error {
-    color: rgb(179, 57, 57);
-    border-color: rgb(179, 57, 57);
-    outline-color: rgb(179, 57, 57);
+footer{
+    color: #4055af;
 }

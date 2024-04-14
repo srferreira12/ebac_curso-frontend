@@ -1,48 +1,39 @@
-document.addEventListener('DOMContentLoaded', function () {
+function verificarCadastro() {
+    let nome = document.getElementById("nome").value;
+    let telefone = document.getElementById("telefone").value;
 
-    const form = document.getElementById('form-deposito');
-    const campoA = document.getElementById('campo-A');
-    const campoB = document.getElementById('campo-B');
-    const errorMessage = document.querySelector('.error-message');
-    const successMessage = document.querySelector('.success-message');
+    if (nome === '' || telefone === '') {
+        alert("Por gentileza, preencha todos os campos.");
+        return;
+    }
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
+    let tabela = document.getElementById("tabelaContatos");
+    let linhas = tabela.rows;
 
-        errorMessage.style.display = 'none';
-        successMessage.style.display = 'none';
-
-        if (campoA.value === '' || campoB.value === '') {
-            errorMessage.innerText = 'Preencha este campo.';
-            errorMessage.style.display = 'block';
+    for (let i = 1; i < linhas.length; i++) {
+        let celulaNome = linhas[i].cells[0];
+        if (celulaNome.innerHTML === nome) {
+            alert("Este nome já está cadastrado na agenda.");
             return;
         }
+    }
 
-        const numA = parseInt(campoA.value);
-        const numB = parseInt(campoB.value);
+    adicionarContato();
+}
 
-        if (numA < 0 || numA > 8) {
-            errorMessage.style.display = 'block';
-            return;
-        }
+function adicionarContato() {
+    let nome = document.getElementById("nome").value;
+    let telefone = document.getElementById("telefone").value;
 
-        if (numB < 1 || numB > 9 || numB <= numA) {
-            errorMessage.innerText = 'O número do campo B deve ser maior que o número do campo A.';
-            errorMessage.style.display = 'block';
-            return;
-        }
+    let tabela = document.getElementById("tabelaContatos");
+    let novaLinha = tabela.insertRow(-1); 
 
-        successMessage.innerText = 'Está correto.';
-        successMessage.style.display = 'block';
-    });
+    let celulaNome = novaLinha.insertCell(0); 
+    let celulaTelefone = novaLinha.insertCell(1); 
 
-    campoA.addEventListener('input', function () {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none'; 
-    });
+    celulaNome.innerHTML = nome;
+    celulaTelefone.innerHTML = telefone;
 
-    campoB.addEventListener('input', function () {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none'; 
-    });
-});
+    document.getElementById("nome").value = "";
+    document.getElementById("telefone").value = "";
+}
