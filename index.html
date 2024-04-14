@@ -1,26 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="./main.css" />
-    
+    <title>Agenda de Contato</title>
+    <link rel="stylesheet" href="./main.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="folha de estilo" >
 </head>
 <body>
+
     <div class="container">
-        <h1>Formulario</h1>
-        <h2>Numérico</h2>
-        <form id="form-deposito">
-            <input type="number" id="campo-A" required placeholder="Digite um número de 0 a 10" min="0" max="10" />
-            <input type="number" id="campo-B" required placeholder="Digite um número de 1 a 12 e que seja maior que o número do campo A" min="1" max="12" />
-            <p class="error-message"></p>
-            <button id="submit" type="submit">Confirmar</button>
+    
+        <h1>Agenda de Contatos</h1>
+        
+        <form id="formContato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" pattern="\d{10,}" title="Informe um número de telefone válido (mínimo 10 dígitos)" required>
+            <button type="button" onclick="verificarCadastro()">Cadastrar</button>
         </form>
-        <p class="success-message"></p>
+        
+        <table id="tabelaContatos">
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+            </tr>
+        </table>
+    
     </div>
+    <footer>
+        <div class="container">
+            <p>
+                &copy; Agenda de Contatos - Todos os direitos reservados - 2024
+            </p>
+        </div>
+    </footer>
+    
     <script src="./main.js"></script>
 </body>
 </html>
