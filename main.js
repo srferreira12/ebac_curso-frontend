@@ -1,39 +1,20 @@
-function verificarCadastro() {
-    let nome = document.getElementById("nome").value;
-    let telefone = document.getElementById("telefone").value;
+$(document).ready(function () {
 
-    if (nome === '' || telefone === '') {
-        alert("Por gentileza, preencha todos os campos.");
-        return;
-    }
+    $("form").submit(function (event) {
+        event.preventDefault();
 
-    let tabela = document.getElementById("tabelaContatos");
-    let linhas = tabela.rows;
+        const valorinput = $("#tarefa").val();
+        $("ul").append(`<li><span class="pendente">🛠️ </span> ${valorinput}</li>`);
+        $("#tarefa").val('');
 
-    for (let i = 1; i < linhas.length; i++) {
-        let celulaNome = linhas[i].cells[0];
-        if (celulaNome.innerHTML === nome) {
-            alert("Este nome já está cadastrado na agenda.");
-            return;
-        }
-    }
+        $("ul").on('click', 'li', function(){
+            $(this).toggleClass("linha-meio");
+            $(this).toggleClass("checked");
+            $(this).find(".pendente").toggleClass("hide");
+            
+        })
 
-    adicionarContato();
-}
+        
+    });
 
-function adicionarContato() {
-    let nome = document.getElementById("nome").value;
-    let telefone = document.getElementById("telefone").value;
-
-    let tabela = document.getElementById("tabelaContatos");
-    let novaLinha = tabela.insertRow(-1); 
-
-    let celulaNome = novaLinha.insertCell(0); 
-    let celulaTelefone = novaLinha.insertCell(1); 
-
-    celulaNome.innerHTML = nome;
-    celulaTelefone.innerHTML = telefone;
-
-    document.getElementById("nome").value = "";
-    document.getElementById("telefone").value = "";
-}
+});

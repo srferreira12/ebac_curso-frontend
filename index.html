@@ -1,43 +1,43 @@
-
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contato</title>
-    <link rel="stylesheet" href="./main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https: //fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="folha de estilo" >
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="container">
-    
-        <h1>Agenda de Contatos</h1>
-        
-        <form id="formContato">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" pattern="\d{10,}" title="Informe um número de telefone válido (mínimo 10 dígitos)" required>
-            <button type="button" onclick="verificarCadastro()">Cadastrar</button>
-        </form>
-        
-        <table id="tabelaContatos">
-            <tr>
-                <th>Nome</th>
-                <th>Telefone</th>
-            </tr>
-        </table>
-    
-    </div>
-    <footer>
-        <div class="container">
-            <p>
-                &copy; Agenda de Contatos - Todos os direitos reservados - 2024
-            </p>
+    <div class="logo">
+        <header>
+            <h1>Lista</h1> 
+        </header>
+    </div>    
+    <div class="conteiner">
+        <div class="headerForm">
+            <h1>Lista de Tarefas</h1>   
         </div>
-    </footer>
+        <form>
+            <input id="tarefa" class="itemTxt" type="text" placeholder= "Nome da tarefa" required>
+            <button type="submit">Adicionar Tarefas</button>
+        </form>
+        <div class="adicionar-tarefa">
+            <h3>Tarefas de Hoje</h3>
+        </div>
+        <ul></ul>
+        
+        </table>
+    </div>
     
-    <script src="./main.js"></script>
+    <div class="footerMain">
+        <footer>
+        &copy; Desenvolvido por Rafael -2024
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

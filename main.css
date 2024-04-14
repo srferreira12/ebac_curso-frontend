@@ -1,66 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Protest Strike', sans-serif;
+    font-weight: normal;
+}
 
 body {
-    background-color: rgb(183, 208, 228);
-    font-family: "Roboto", sans-serif;
-}
-.container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-}
-h1 {
-    text-align: center;
-    color: #457ba0;
-}
-form {
-    margin-bottom: 20px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #457ba0;
-}
-input[type="text"] {
-    width: calc(100% - 20px);
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 40px;
-}
-button {
-    margin-top: 5px;
-    width: 100%;
-    padding: 8px;
-    background-color: #4055af;
+    background-color: rgb(52, 209, 149);
     color: #fff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #4c5eaf;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden;
-}
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
-    color: #457ba0;
-}
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-tr:hover {
-    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer{
-    color: #4055af;
+.logo, .headerForm, .adicionar-tarefa, .footerMain, .tabela-pequena {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.logo header,
+.headerForm h1,
+.adicionar-tarefa h3,
+.footerMain footer {
+    font-size: 25px;
+}
+
+.conteiner {
+    margin: 20px auto;
+    width: 480px;
+    max-width: 100%;
+}
+
+form {
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+form label {
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+form .itemTxt {
+    display: block;
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+form button {
+    display: block;
+    font-size: 14px;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul li {
+    background: #eee;
+    color: #08f362;
+    height: 40px;
+    border-radius: 50px;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+    font-size: 18px;
+    text-align: center;
+}
+
+.linha-meio {
+    text-decoration: line-through;
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+ul li .pendente {
+    margin-right: 5px;
+}
+
+ul li.checked .pendente {
+    display: none;
+}
+
+ul li.checked::before {
+    content: '👍 ';
+    margin-right: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.footerMain {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: underline;
+    color: #fff;
 }
