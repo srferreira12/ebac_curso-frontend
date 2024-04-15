@@ -1,20 +1,53 @@
-$(document).ready(function () {
+$(document).ready(function (){
 
-    $("form").submit(function (event) {
-        event.preventDefault();
+    $('#telefone').mask('(00) 00000-0000', {
+        placeholder: '(DDD com 2 dígitos) 12345-6789'
+    })
 
-        const valorinput = $("#tarefa").val();
-        $("ul").append(`<li><span class="pendente">🛠️ </span> ${valorinput}</li>`);
-        $("#tarefa").val('');
+    $('#cpf').mask('000.000.000-00', {
+        placeholder: '123.456.789-00'
+    })
 
-        $("ul").on('click', 'li', function(){
-            $(this).toggleClass("linha-meio");
-            $(this).toggleClass("checked");
-            $(this).find(".pendente").toggleClass("hide");
-            
-        })
+    $('#cep').mask('00000-000', {
+        placeholder: '12345-000'
+    })
 
-        
-    });
+    $('form').validate({
+        rules: {
+            nome: {required: true},
+            email: {required: true, email: true},
+            telefone: {required: true, minlength: 14},
+            cpf: {required: true},
+            endereco: {required: true},
+            cep: {required: true, minlength: 9}
+        },
 
-});
+    messages: {
+        nome: "Insira seu nome completo",
+        email: "Insira um email valido",
+        telefone: "Insira um numero de celular",
+        cpf: "Coloque seu CPF",
+        endereco: "Insira seu endereço completo",
+        cep: "Insira o CEP de sua rua",
+    },
+
+    submitHandler: function (form) {
+        alert(`Cadastro concluído com sucesso!`);
+    
+        nome.value = "";
+        email.value = "";
+        telefone.value = "";
+        cpf.value = "";
+        endereco.value = "";
+        cep.value = "";
+    },
+    invalidHandler: function (evento, validador) {
+        let camposIncorretos = validador.numberOfInvalids();
+        if (camposIncorretos) {
+        alert(`Exitem ${camposIncorretos} campos incorretos ou vazios`);
+        }
+    },
+
+    })
+
+})
