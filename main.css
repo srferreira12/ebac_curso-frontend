@@ -2,114 +2,199 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto',sans-serif;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 }
 
+body {
+    background-color: aliceblue;
+}
 
-header > .container  {
+header {
+    background-color: #152730;
+    padding-top: 16px;
+    color: #fff;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+header > .container{
     display: flex;
     justify-content: space-between;
-    align-items: center;  
+    align-items: center;
     padding-bottom: 16px;
 }
 
-header a {
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
+nav {
+    background-color: #2b424e;
+    padding: 16px 0;
+    display: none;
 }
 
 nav li {
     list-style: none;
     display: inline;
     margin-right: 16px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #fff;
 }
 
 nav li a {
-    cursor: pointer;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
+}
+
+.menu-hamburguer {
+    width: 32px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span{
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.container-flex {
+    display: flex;
+}
+
+.sobre-a-loja {
+    margin-top: 16px;
+    display: flex;
+}
+
+.sobre-a-loja img {
+    max-width: 400px;
+    margin-right: 24px;
 }
 
 section {
-    margin-top: 24px;
-    text-align: center;
-}
-
-section h1 {
-    font-size: 50px;
-    text-transform: uppercase;
-}
-
-section h2 {
-    font-size: 36px;
-    font-style: italic;
-
-}
-
-a:hover {
-    opacity: 0.8;
-}
-
-.form-campo {
-    margin-bottom: 16px;
-}
-
-.form-campo label {
-    font-weight: bold;
-    display: block;
-}
-
-.form-campo input {
-    width: 100%;
-    display: inline;
-    padding: 15px;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-form {
     margin-top: 16px;
-    margin-left: 10%;
-    max-width: 960px;
-    text-transform: uppercase;
-    align-items: center;
 }
 
-form button {
-    max-width: 200px;
-    margin-bottom: 24px;
-    margin-left: 40%;
+.lista {
+    margin-top: 16px ;
+}
+
+.lista ul{
+    display: grid;
+    grid-template-columns: repeat( 4 , 24.5%);
+    column-gap: 1%;
+}
+
+.lista-jogos img {
+    max-width: 100%;
+}
+
+.lista-jogos li {
+    list-style: none;
+}
+
+.price {
+    margin: 4px;
 }
 
 button {
     display: block;
     width: 100%;
-    padding: 8px 0;
+    padding: 2px 0;
+    margin-top: 2px;
     border: none;
-    background-color: rgb(0, 255, 21);
-    font-size: 20px;
+    background-color: #152730;
+    color: #fff;
+    font-size: 16px;
     font-weight: bold;
+    font-style: italic;
     cursor: pointer;
     border-radius: 6px;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: #144add;
 }
 
-footer p {
-    text-align: center;
-    padding-bottom: 16px;
+@media  screen and ( max-width: 640px) {
+
+    .container {
+        max-width: 90%;
+        display: block;
+    } 
+
+    header > .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-bottom: 16px;
+    }
+
+    .sobre-a-loja {
+        display: flex;
+    }
+
+    .sobre-a-loja img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 2%;
+    }
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .menu-hamburguer span{
+        height: 2px;
+        width: 100%;
+        background-color: #fff;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .lista ul {
+        display: block;
+        column-gap: 1%;
+        row-gap: 5%;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and ( min-width: 641px) and ( max-width: 1023px) {
+    .container{
+        max-width: 90%;
+    }
+
+    .sobre-a-loja .container-flex {
+        display: block;
+    }
+
+    .sobre-a-loja img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 2%;
+    }   
+
+    .lista .container-flex {
+        grid-template-columns: repeat(2, 49%);
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
 }
